@@ -1,0 +1,16 @@
+.gradle/
+.idea/
+*.iml
+.classpath
+*.settings
+.project
+.gradle/
+# IntelliJ IDEA
+*.iml
+.idea/
+.flattened-pom.xml
+*.tgz
+*.lock
+bin/
+build/
+out/

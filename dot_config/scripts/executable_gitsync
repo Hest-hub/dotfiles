@@ -1,0 +1,34 @@
+#!/bin/bash
+HIGHLIGHT="\e[01;34m"
+NORMAL='\e[00m'
+
+function update {
+  local d="$1"
+  if [ -d "$d" ]; then
+    if [ -e "$d/.ignore" ]; then 
+      echo -e "\n${HIGHLIGHT}Ignoring $d${NORMAL}"
+    else
+      cd $d > /dev/null
+      if [ -d ".git" ]; then
+        echo -e "\n${HIGHLIGHT}Updating `pwd`$NORMAL"
+        git cmp && git branch --merged | grep -v \* | xargs -n1 git branch -D
+      else
+        scan *
+      fi
+      cd .. > /dev/null
+    fi
+  fi
+}
+
+function scan {
+  for x in $*; do
+    update "$x"
+  done
+}
+
+eval $(ssh-agent)
+ssh-add ~/.ssh/id_rsa
+
+if [ "$1" != "" ]; then cd $1 > /dev/null; fi
+echo -e "${HIGHLIGHT}Scanning ${PWD}${NORMAL}"
+scan *
