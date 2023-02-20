@@ -16,7 +16,7 @@ plugins=(
 )
 
 ZSH_CUSTOM=$HOME/.config/zsh/
-ZSH_THEME="mytheme"
+ZSH_THEME="nord"
 DISABLE_UPDATE_PROMPT=true
 
 setopt INC_APPEND_HISTORY
