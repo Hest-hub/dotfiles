@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.os "darwin" }}
+Brewfile
+.yabairc
+.skhdrc
+private_Library/
+.config/iterm2/
+{{- end }}
