@@ -56,6 +56,6 @@ cask "mqttx"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
-mas "Amphetamine", id: 937984704
-mas "Keynote", id: 409183694
-mas "Xcode", id: 497799835
+# mas "Amphetamine", id: 937984704
+# mas "Keynote", id: 409183694
+# mas "Xcode", id: 497799835
